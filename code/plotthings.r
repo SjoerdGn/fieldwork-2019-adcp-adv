@@ -23,17 +23,17 @@ asm2 <- round(asm, digits = 3)
 asm3 <- asm2
 
 plt <- barplot(as.matrix(rmse[,2:5]), beside=T, 
-        main = "Root mean squared error ADCP vs ADV different sections",
+        main = "Root mean squared error for ADCP vs ADV, in different parts",
         col= c('mediumblue', 'mediumslateblue', "Red"), xlab = "Postion", 
         ylab = "RMSE (m^3/s)", ylim = c(0,0.70), border = "white", args.legend = "topleft")
 
-legend("topleft", legend = rmse$ADCP, inset = 0.05)
+legend("topleft", legend = rmse$ADCP, inset = 0.05, col= c('mediumblue', 'mediumslateblue', "Red"), pch = 15)
 y<-as.matrix(rmse)
 
 asm3[2]=asm3[2]+0.01
 asm3[11]=asm3[11]+0.01
 
-text(x = plt, y = c(asm3)+0.02, labels = c(asm2), cex = 0.7)
+text(x = plt, y = c(asm3)+0.02, labels = c(asm2), cex = 1)
 
 help(legend)
 
